@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afolabi Abdulsalam | Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --text: #222;
+      --card: #ffffff;
+      --accent: #0078ff;
+    }
+
+    /* DARK MODE VARIABLES */
+    .dark {
+      --bg: #0f0f0f;
+      --text: #eaeaea;
+      --card: #161616;
+      --accent: #4da3ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      padding: 18px 8%;
+      background: var(--card);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+
+    /* MOBILE MENU */
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 750px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: var(--card);
+        padding: 20px;
+        position: absolute;
+        right: 8%;
+        top: 65px;
+        width: 180px;
+        border-radius: 10px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 90px 8% 60px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 650px;
+      margin: 0 auto;
+      color: #666;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      background: var(--accent);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #005fcc;
+    }
+
+    /* SECTIONS */
+    section {
+      width: 85%;
+      max-width: 1100px;
+      background: var(--card);
+      margin: 45px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.6s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      font-size: 26px;
+    }
+
+    /* PROJECT GRID */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 20px;
+      background: var(--bg);
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 50px;
+      padding: 25px;
+      text-align: center;
+      background: #111;
+      color: white;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Afolabi Abdulsalam</div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <ul id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#" onclick="toggleDarkMode()">🌙</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Hello, I'm Abulsalam</h1>
+    <p>A young frontend developer building modern, clean, and professional websites.</p>
+
+    <a class="btn" href="Abdulsalam_CV.pdf" download>Download CV</a>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm Abulsalam, also known as <strong>lil_otaku</strong>, a teen developer with a strong interest in UI design and
+      building functional websites.  
+      I'm growing my skills in HTML, CSS, and JavaScript, with a goal to become a full-stack developer.
+    </p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+
+      <div class="card">
+        <h3>Krelis Legacy College Website</h3>
+        <p>A responsive school website built with clean UI and smooth structure.</p>
+      </div>
+
+      <div class="card">
+        <h3>Ejidey School Redesign</h3>
+        <p>A complete modern redesign of my school website with improved layout.</p>
+      </div>
+
+      <div class="card">
+        <h3>Portfolio Template</h3>
+        <p>A minimal and professional personal portfolio template for developers.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>HTML • CSS • JavaScript (learning) • Responsive Design</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: afolabiabdulsalam61@gmail.com</p>
+    <p>Phone: 09073268401</p>
+  </section>
+
+  <footer>
+    © 2025 Abulsalam — Portfolio
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    /* DARK MODE */
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+
+    /* MOBILE MENU */
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("active");
+    }
+
+    /* SCROLL ANIMATIONS */
+    const sections = document.querySelectorAll("section");
+
+    function revealOnScroll() {
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 120) {
+          sec.classList.add("show");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  </script>
+
+</body>
+</html>
